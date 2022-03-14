@@ -1,0 +1,661 @@
+% $Header: svn+ssh://andre@crapman/home/junda/repos/andre/school/trunk/m/Chapter/algebra.ii/algebra.main.tex 273 2021-10-02 20:40:50Z andre $
+% touch hydraulic.pnaumatic.trans.main.tex
+% svn add hydraulic.pnaumatic.trans.main.tex
+% svn propset svn:keywords "Header" hydraulic.pnaumatic.trans.main.tex
+
+
+%%aspectratio=1610;169;149;54;43(default);32
+% \documentclass[fleqn,11pt,trans,aspectratio=169]{beamer}
+% \documentclass[fleqn,11pt,article,aspectratio=43]{beamer}
+% \documentclass[fleqn,11pt,handout,aspectratio=43]{beamer}
+% \documentclass[fleqn,11pt,trans,aspectratio=43,hyperref={colorlinks = true,linkcolor = blue,urlcolor=red!30!black}}]{beamer}
+\documentclass[fleqn,11pt,beamer,aspectratio=43,hyperref={colorlinks = true,linkcolor = blue,urlcolor=red!30!black}]{beamer}
+% \documentclass[fleqn,11pt,handout,hyperref={colorlinks = true,linkcolor = blue,urlcolor=red!30!black}]{beamer}
+\def\adVers{20222310.v.0.1.s}
+
+\newif\ifteacher
+% \teachertrue
+\teacherfalse
+
+% This file is a solution template for:
+
+% - Talk at a conference/colloquium.
+% - Talk length is about 20min.
+% - Style is ornate.
+
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice.
+
+
+\mode<presentation>
+{
+%  \usetheme{Warsaw}
+%  \usetheme{Antibes}
+  \usetheme[secheader]{Madrid}
+% AnnArbor
+% Antibes
+% Bergen
+% Berkeley
+% Berlin
+% Boadilla
+% boxes
+% CambridgeUS
+% Copenhagen
+% Darmstadt
+% default
+% Dresden
+% Frankfurt
+% Goettingen
+% Hannover
+% Ilmenau
+% JuanLesPins
+% Luebeck
+% Madrid
+% Malmoe
+% Marburg
+% Montpellier
+% PaloAlto
+% Pittsburgh
+% Rochester
+% Singapore
+% Szeged
+% Warsaw
+
+  \setbeamercovered{transparent}
+  \setbeamertemplate{blocks}[default]
+  % or whatever (possibly just delete it)
+}
+
+\usecolortheme{seahorse}%%
+
+\usepackage[ngerman,english]{babel}
+% or whatever
+
+% \usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+% or whatever
+
+% \usepackage{times}
+\usepackage[T1]{fontenc}
+% \usepackage{times}
+\usepackage{ebgaramond}
+\usepackage{ebgaramond-maths}
+% \usepackage{amsfonts}
+% \usepackage{txfonts}
+% \usepackage{amssymb}
+% \usepackage{bbold}
+% \usepackage{dsfont}
+
+% \usepackage{arevmath}
+\usefonttheme{professionalfonts}
+\usefonttheme[]{serif}
+\usefonttheme[]{structuresmallcapsserif}
+% \usepackage{ebgaramond-maths}
+
+% \fontsize{6}{3}{
+%     }
+% \makeatletter
+% \DeclareMathSizes{\@xpt}{7}{6}{5}
+% \DeclareMathSizes{\@xipt}{9}{6}{5}
+% % \DeclareMathSizes{\@xiipt}{9}{7}{6}
+% % \DeclareMathSizes{\@xiipt}{11}{7}{6}
+% \DeclareMathSizes{\@xivpt}{\@xivpt}{\@xpt}{7}
+% \DeclareMathSizes{\@xviipt}{\@xviipt}{\@xiipt}{\@xpt}
+% \DeclareMathSizes{\@xxpt}{\@xxpt}{\@xivpt}{\@xiipt}
+% \DeclareMathSizes{\@xxvpt}{\@xxvpt}{\@xxpt}{\@xviipt}
+% \makeatother
+
+
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+%%\usepackage[dvipdfm]{graphicx}
+\usepackage[]{graphicx}
+\usepackage{units}
+% \usepackage{siunitx}
+%
+\usepackage{pgf,tikz}
+\usetikzlibrary{arrows}
+% \usetikzlibrary{automata}
+\usetikzlibrary{arrows.meta}
+% \usetikzlibrary{intersections}
+\usetikzlibrary{calc}
+\usetikzlibrary{chains}
+% \usetikzlibrary{math}
+\usetikzlibrary{patterns}
+% \usetikzlibrary{trees}
+% \usetikzlibrary{plothandlers}
+% \graphicspath{{./plots/}}
+% \usetikzlibrary{graphs}
+\usetikzlibrary {positioning}
+\usepackage[]{tikzpeople}
+\usetikzlibrary{shapes.callouts}
+\usetikzlibrary{shadows}
+\usetikzlibrary{external}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usepgfplotslibrary{fillbetween}
+
+\pgfdeclareverticalshading{rainbow}{100bp}
+ {color(0bp)=(red); color(25bp)=(red); color(35bp)=(yellow);
+  color(45bp)=(green); color(55bp)=(cyan); color(65bp)=(blue);
+  color(75bp)=(violet); color(100bp)=(violet)}
+
+\usepackage{pgfpages}
+% \pgfpagesuselayout{resize to}[a4paper,border shrink=5mm,landscape]
+% \pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]
+\mode<handout>{
+  \usetheme{default}
+  \usecolortheme{dove}
+%   \setbeamercolor{background canvas}{bg=white}%black!5}
+  \pgfpagesuselayout{2 on 1}[a4paper,border shrink=2mm]
+%   \pgfpagesuselayout{4 on 1}[a4paper,border shrink=4mm,landscape]
+}
+
+\usepackage{multimedia}
+
+% \usepackage[urlcolor=red]{hyperref}%%loaded by beamer by default
+% \usepackage{url}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\let\SAVEDRightarrow=\Rightarrow
+\usepackage{marvosym}
+\let\Rightarrow=\SAVEDRightarrow
+% \usepackage{ifsym} %%strichliste
+\usepackage{eurosym}
+\usepackage{color}
+% \usepackage{fourier}
+\usepackage{cancel}
+\usepackage{booktabs}
+% \usepackage{enumitem} %%labelind
+\usepackage{array}
+\usepackage{tikzlings-bears}
+% \usepackage{tikzlings}
+
+
+
+%%==============================================================================
+%% radiant in school book style
+\newcommand{\tarc}{\mbox{$\frown$}}
+\newcommand{\arc}[2][-0.7em]{{#2}{\kern #1{\raisebox{1.5ex}{\tarc}}}}
+%%==============================================================================
+
+%%==============================================================================
+%% d in integral should be upright
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+%%==============================================================================
+\newcommand{\adborn}{{\usefont{T1}{cmr}{m}{n}\textborn}}
+\newcommand{\addied}{{\usefont{T1}{cmr}{m}{n}\textdied}}
+
+\title[Hydraulik und Pneumatik] % (optional, use only with long paper titles)
+{Hydraulik und Pneumatik}
+% \subtitle
+% {Include Only If Paper Has a Subtitle}
+
+% \author[Dostal] % (optional, use only with lots of authors)
+% {Andr\'e Dostal}
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[\adVers \textnormal{\copyright} ad7@gmx.at] % (optional, but mostly needed)
+% \institute[Universities of Somewhere and Elsewhere] % (optional, but mostly needed)
+% {
+%   \inst{1}%
+%   Department of Computer Science\\
+%   University of Somewhere
+%   \and
+%   \inst{2}%
+%   Department of Theoretical Philosophy\\
+%   University of Elsewhere}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date[2021/22] % (optional, should be abbreviation of conference name)
+{2021/22}
+% - Either use conference name or its abbreviation.
+% - Not really informative to the audience, more for people (including
+%   yourself) who are reading the slides online
+
+\subject{Hydraulik und Pneumatik}
+% This is only inserted into the PDF information catalog. Can be left
+% out.
+
+
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
+% \logo{\pgfuseimage{university-logo}}
+
+
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+% \AtBeginSubsection[]
+% {
+%   \begin{frame}<beamer>
+%     \frametitle{Outline}
+%     \tableofcontents[currentsection,currentsubsection]
+%   \end{frame}
+% }
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command:
+
+%\beamerdefaultoverlayspecification{<+->}
+
+% \pgfplotsset{ % Define a common style, so we don't repeat ourselves
+%     MaoYiyi/.style={
+% %         width=0.6\textwidth, % Overall width of the plot
+%         axis equal image, % Unit vectors for both axes have the same length
+%         view={0}{90}, % We need to use "3D" plots, but we set the view so we look at them from straight up
+% %         xmin=0, xmax=1.1, % Axis limits
+% %         ymin=0, ymax=1.1,
+% %         domain=0:1, y domain=0:1, % Domain over which to evaluate the functions
+% %         xtick={0,0.5,1}, ytick={0,0.5,1}, % Tick marks
+%         samples=11, % How many arrows?
+%         cycle list={    % Plot styles
+%                 line width=0.2mm,
+%                 gray,
+%                 quiver={
+%                     u={1}, v={f(x)}, % End points of the arrows
+%                     scale arrows=0.075,
+% %                     scale arrows=0.075,
+% %                     every arrow/.append style={
+% %                         {Stealth[length=1mm,round,open]}
+% %                         -latex % Arrow tip
+% %                     },
+%                 }\\
+%                 red, samples=31, smooth, thick, no markers, domain=0:1.1\\ % The plot style for the function
+%         }
+%     }
+% }
+% \usepackage[os=win]{menukeys}
+% \usepackage{libertine}
+
+%%==============================================================================
+\newcommand{\keystroke}[1]{{
+  \hspace{0.1ex}%%
+%     \tikz[baseline={([0.15\baselineskip]current bounding box.south)}]%%
+   \tikz[baseline={([yshift=0.15\baselineskip]current bounding box.south)}]%%
+%     \tikz[baseline=(ke‌​y.base)]
+    \node[%%
+      draw,
+%       t‌​ext height=1.5ex,text depth=0ex,
+      fill=black!10,drop shadow={shadow xshift=0.2ex,shadow yshift=-0.2ex
+        ,fill=black,opacity=0.50}
+      ,rectangle,rounded corners=2pt,inner sep=2.75pt,line width=0.5pt
+      ,font=\footnotesize\sffamily,minimum width=0.3cm
+      ] (key) {#1};
+   \hspace{0.1ex}%%
+}}
+%%==============================================================================
+
+%%==============================================================================
+%%TR-Tasten
+\newcommand{\TRb} [1]{{\tikz [baseline={([yshift=0.15\baselineskip]current bounding box.south)},start chain,node distance=1mm] \foreach \x in {#1} \node [anchor=mid,on chain,draw,rounded corners,font=\footnotesize\sffamily,minimum height=0.30cm,fill=black!10,draw=black     ,rounded corners=2pt,inner sep=2.75pt,line width=0.5pt] {\x}; }}%%inner sep=0.1cm,
+\newcommand{\TRr} [1]{{\tikz [baseline={([yshift=0.15\baselineskip]current bounding box.south)},start chain,node distance=1mm] \foreach \x in {#1} \node [anchor=mid,on chain,draw,rounded corners,font=\footnotesize\sffamily,minimum height=0.30cm,fill=red!20,draw=red!80      ,rounded corners=2pt,inner sep=2.75pt,line width=0.5pt] {\x}; }}%%inner sep=0.1cm,
+\newcommand{\TRo} [1]{{\tikz [baseline={([yshift=0.15\baselineskip]current bounding box.south)},start chain,node distance=1mm] \foreach \x in {#1} \node [anchor=mid,on chain,draw,rounded corners,font=\footnotesize\sffamily,minimum height=0.30cm,fill=orange!30,draw=orange!80,rounded corners=2pt,inner sep=2.75pt,line width=0.5pt] {\x}; }}%%inner sep=0.1cm,
+\newcommand{\TRy} [1]{{\tikz [baseline={([yshift=0.15\baselineskip]current bounding box.south)},start chain,node distance=1mm] \foreach \x in {#1} \node [anchor=mid,on chain,draw,rounded corners,font=\footnotesize\sffamily,minimum height=0.30cm,fill=yellow!30,draw=yellow!90,rounded corners=2pt,inner sep=2.75pt,line width=0.5pt] {\x}; }}%%inner sep=0.1cm,
+\newcommand{\TRbl}[1]{{\tikz [baseline={([yshift=0.15\baselineskip]current bounding box.south)},start chain,node distance=1mm] \foreach \x in {#1} \node [anchor=mid,on chain,draw,rounded corners,font=\footnotesize\sffamily,minimum height=0.30cm,fill=blue!30  ,draw=blue!90  ,rounded corners=2pt,inner sep=2.75pt,line width=0.5pt] {\x}; }}%%inner sep=0.1cm,
+%%==============================================================================
+\newcommand{\keystrokes}[1]{{
+  \hspace{0.1ex}%%
+%     \tikz[baseline={([0.15\baselineskip]current bounding box.south)}
+   \tikz[baseline={([yshift=0.15\baselineskip]current bounding box.south)}
+%     \tikz[baseline={([yshift=1mm]current bounding box.south)}
+%     \tikz[baseline={(k-1.base)}
+      ,start chain,node distance=1mm]%%
+%     \tikz[baseline=(ke‌​y.base)]
+%     \foreach \x in {#1}
+    \foreach \x [count=\cnt] in {#1}
+    \node[%%
+      on chain,draw,
+%       t‌​ext height=1.5ex,text depth=0ex,
+      fill=black!10,drop shadow={shadow xshift=0.2ex,shadow yshift=-0.2ex
+        ,fill=black,opacity=0.50}
+      ,rectangle,rounded corners=2pt,inner sep=2.75pt,line width=0.5pt
+      ,font=\footnotesize\sffamily,minimum width=0.3cm%,shift={{(\xi*0.5-0.5,0)}}
+      ] (k-\cnt) {\x};
+   \hspace{0.1ex}%%
+}}
+%%==============================================================================
+
+%%==============================================================================
+\newcommand{\adRule}[2]{{%%#deciTics #centiTics
+  \makebox[0pt]{|0}%%
+  \foreach \n  [count=\ni,evaluate=\n as \npe using \ni+1] in {1,...,#1}{%%
+    \parbox{0.1\linewidth}{\,\!}\makebox[0pt]{|\ni}%%
+%     \phantom{\ifnum #1<\npe%%
+%       \breakforeach%%
+%     \fi}%%
+  }%%
+  \!\!
+  \foreach \n  [count=\ni,evaluate=\n as \npe using \ni+1] in {1,...,#2}{%%
+    \parbox{0.01\linewidth}{\,\!}\makebox[0pt]{|}%%
+%     \phantom{\ifnum #2<\npe%%
+%       \breakforeach%%
+%     \fi}%%
+  }
+%     \makebox[0pt]{|}\parbox{0.1\linewidth}{\ }\makebox[0pt]{|}%%
+%     \parbox{0.1\linewidth}{\ }\makebox[0pt]{|}%%
+%     \parbox{0.01\linewidth}{\ }\makebox[0pt]{|}%%
+%     \parbox{0.01\linewidth}{\ }\makebox[0pt]{|}\\%%
+}}
+%%==============================================================================
+
+%%==============================================================================
+\newcommand{\minitab}[2][@{}c@{}]{\begin{tabular}[t]{#1}#2\end{tabular}}
+%%==============================================================================
+%%==============================================================================
+\newcommand{\miniarray}[2][@{}c@{}]{\begin{array}[t]{#1}#2\end{array}}
+%%==============================================================================
+
+%%==============================================================================
+\newcommand{\adCenter}[1]{\hspace*{\stretch{1}}{#1}\hspace*{\stretch{1}}}
+%%==============================================================================
+
+%%==============================================================================
+\newcommand{\adBall}[3]{%%color size text
+% \tikz{[anchor=base, baseline]\shade[ball color=#1](0,0) circle (#2) node[] {#3}}
+% \tikz{[baseline=0pt]\shade[ball color=#1](0,0) circle (#2) node[] {#3}}
+% \tikz{[baseline=(x.base)]\shade[ball color=#1](0,0) circle (#2) node[anchor=base,shift={{(0,-0.3ex)}}](x) {#3}}
+% \tikz{[baseline=(x.base)]\shade[ball color=#1](0,0) circle (#2) node[anchor=mid](x) {#3}}
+% \tikz{[baseline=(x.base)]\shade[ball color=#1](0,0) circle (#2) node[yshift=-0.1\baselineskip,anchor=base](x) {\tiny#3}}
+% \tikz{[baseline=(current bounding box.mid)]\shade[ball color=#1](0,0) circle (#2) node[yshift=-0.1\baselineskip,anchor=base](x) {\tiny#3}}
+% \tikz{[baseline=(current bounding box.center)]\shade[ball color=#1](0,0) circle (#2) node[yshift=-0.0\baselineskip](x) {#3};}
+% \tikz{[baseline=(current bounding box.mid)]\shade[ball color=#1](0,0) circle (#2) node[yshift=-0.0\baselineskip](x) {#3};}
+\tikz{[baseline=(current bounding box.base)]\shade[ball color=#1](0,0) circle (#2) node[yshift=-0.0\baselineskip](x) {#3};}
+%\tikz{[baseline=(x.base)]\shade[ball color=#1](0,0) circle (#2) node[](x) {#3}}
+}
+%%==============================================================================
+
+%%==============================================================================
+\newcommand{\adDiceOne}[1][black]{%%color
+\tikz\draw (0,0) node [draw,minimum size=12pt,rounded corners,color=#1]
+  {\tikz{ \draw(0,0) node [fill=black,circle,inner sep=0.1mm,outer sep=0pt,minimum size=2pt,color=#1] {}; } };
+}
+\newcommand{\adDiceTwo}[1][black]{%%color
+\tikz\draw (0,0) node [draw,minimum size=12pt,rounded corners,inner sep=0.1mm,outer sep=0pt,color=#1]
+  {\tikz{ \foreach \p in {(-3pt,-3pt),(3pt,3pt)}
+            \draw \p node [fill=black,circle,inner sep=0.1mm,outer sep=0pt,minimum size=2pt,color=#1] {}; } };
+}
+\newcommand{\adDiceThree}[1][black]{%%color
+\tikz\draw (0,0) node [draw,minimum size=12pt,rounded corners,inner sep=0.1mm,outer sep=0pt,color=#1]
+  {\tikz{ \foreach \p in {(0,0),(-3pt,-3pt),(3pt,3pt)}
+            \draw \p node [fill=black,circle,inner sep=0.1mm,outer sep=0pt,minimum size=2pt,color=#1] {}; } };
+}
+\newcommand{\adDiceFour}[1][black]{%%color
+\tikz\draw (0,0) node [draw,minimum size=12pt,rounded corners,inner sep=0.1mm,outer sep=0pt,color=#1]
+  {\tikz{ \foreach \p in {(-3pt,-3pt),(3pt,3pt),(3pt,-3pt),(-3pt,3pt)}
+            \draw \p node [fill=black,circle,inner sep=0.1mm,outer sep=0pt,minimum size=2pt,color=#1] {}; } };
+}
+\newcommand{\adDiceFive}[1][black]{%%color
+\tikz\draw (0,0) node [draw,minimum size=12pt,rounded corners,inner sep=0.1mm,outer sep=0pt,color=#1]
+  {\tikz{ \foreach \p in {(0,0),(-3pt,-3pt),(3pt,3pt),(3pt,-3pt),(-3pt,3pt)}
+            \draw \p node [fill=black,circle,inner sep=0.1mm,outer sep=0pt,minimum size=2pt,color=#1] {}; } };
+}
+\newcommand{\adDiceSix}[1][black]{%%color
+\tikz\draw (0,0) node [draw,minimum size=12pt,rounded corners,inner sep=0.1mm,outer sep=0pt,color=#1]
+  {\tikz{ \foreach \p in {(0,-3pt),(0,3pt),(-3pt,-3pt),(3pt,3pt),(3pt,-3pt),(-3pt,3pt)}
+            \draw \p [fill] circle [fill,color=#1,radius=0.8pt]; } };
+%             \draw \p node [anchor=base,fill=black,circle,inner sep=0.1mm,outer sep=0pt,minimum size=2pt,color=#1] {}; } };
+}
+%%==============================================================================
+
+%%==============================================================================
+%%error function
+%%==============================================================================
+\makeatletter
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+\makeatother
+%%==============================================================================
+
+%%==============================================================================
+%%error function
+%%==============================================================================
+\makeatletter
+\pgfmathdeclarefunction{erf}{1}{%
+  \begingroup
+    \pgfmathparse{#1 > 0 ? 1 : -1}%
+    \edef\sign{\pgfmathresult}%
+    \pgfmathparse{abs(#1)}%
+    \edef\x{\pgfmathresult}%
+    \pgfmathparse{1/(1+0.3275911*\x)}%
+    \edef\t{\pgfmathresult}%
+    \pgfmathparse{%
+      1 - (((((1.061405429*\t -1.453152027)*\t) + 1.421413741)*\t
+      -0.284496736)*\t + 0.254829592)*\t*exp(-(\x*\x))}%
+    \edef\y{\pgfmathresult}%
+    \pgfmathparse{(\sign)*\y}%
+    \pgfmath@smuggleone\pgfmathresult%
+  \endgroup
+}
+\makeatother
+%%==============================================================================
+
+%%==============================================================================
+%%Phi function
+%%==============================================================================
+\makeatletter
+\pgfmathdeclarefunction{phin}{1}{%
+  \begingroup
+    \pgfmathparse{#1 > 0 ? 1 : -1}%
+    \edef\sign{\pgfmathresult}%
+    \pgfmathparse{abs(#1)/sqrt(2)}%
+    \edef\x{\pgfmathresult}%
+    \pgfmathparse{1/(1+0.3275911*\x)}%
+    \edef\t{\pgfmathresult}%
+    \pgfmathparse{%
+      1 - (((((1.061405429*\t -1.453152027)*\t) + 1.421413741)*\t
+      -0.284496736)*\t + 0.254829592)*\t*exp(-(\x*\x))}%
+    \edef\y{\pgfmathresult}%
+    \pgfmathparse{((\sign)*\y+1)/2}%
+    \pgfmath@smuggleone\pgfmathresult%
+  \endgroup
+}
+\makeatother
+%%==============================================================================
+
+% % %%==============================================================================
+% % %%Phi function
+% % %%==============================================================================
+% % \makeatletter
+% % \pgfmathdeclarefunction{rounding}{2}{%
+% %   \begingroup
+% %     \pgfmathparse{#1}%
+% %     \pgfmathprintnumberto[precision=1]{\pgfmathresult}{\roundednumber}%
+% % %     \pgfmath@smuggleone\pgfmathresult%
+% %     \roundednumber
+% %   \endgroup
+% % }
+% % \makeatother
+% % %%==============================================================================
+
+%%==============================================================================
+%%Strichliste
+%%==============================================================================
+\def\adStrokeI{\mathsf{|}}
+\def\adStrokeII{\mathsf{|\!|}}
+\def\adStrokeIII{\mathsf{|\!|\!|}}
+\def\adStrokeIV{\mathsf{|\!|\!|\!|}}
+\def\adStrokeV{\bcancel{\mathsf{|\!|\!|\!|}}}
+%%==============================================================================
+
+%%==============================================================================
+%%Boxplot
+%%==============================================================================
+\newcommand{\adBoxplot}[6][1.0]{%%[scale] min q1 q2 q3 max
+  \begin{tikzpicture}[baseline={([yshift=-\baselineskip]current bounding box.north)}
+    ,>={Stealth[length=3mm,round,open]}
+    ,y=1cm,x=1cm,scale=#1]
+    \draw[line width=0.13mm,->](#2-0.5,0) -- (#6+0.5,0) node [above] {\scriptsize $x$};
+    \foreach \x in {#2,#3,#4,#5,#6}{
+      \draw[line width=0.13mm,xshift=#2-0.5,yshift=0.25cm] (\x,0) -- +(0,0.25) ;
+      \draw[line width=0.13mm,xshift=#2-0.5,yshift=0.05cm] (\x,0) -- +(0,-0.1) node [below=0.25cm,anchor=mid] {\scriptsize\x};
+    }
+    \draw[line width=0.13mm,xshift=#2-0.5,yshift=0.25cm] (#3,0) -- (#5,0);
+    \draw[line width=0.13mm,xshift=#2-0.5,yshift=0.5cm] (#3,0) -- (#5,0);
+    \draw[line width=0.13mm,xshift=#2-0.5,yshift=0.375cm] (#2,0) -- (#3,0)
+      (#5,0) -- (#6,0);
+  \end{tikzpicture}\hspace*{\stretch{1}}
+}
+%%==============================================================================
+
+%%==============================================================================
+%%student/teacher field
+%%==============================================================================
+\newcommand{\adSTField}[2][1.0]{%%[scale] value
+\ifteacher
+  {#2}
+\else
+  {\fbox{\phantom{{#2}}}}
+\fi
+}
+%%==============================================================================
+%%==============================================================================
+\newcommand{\adSTFieldm}[2][1.0]{%%[scale] value
+\ifteacher
+  {#2}
+\else
+  {\fbox{\phantom{{$#2$}}}}
+\fi
+}
+%%==============================================================================
+
+%%==============================================================================
+\newcommand{\addim}[6][draw]{% {start}{end}{shift}{pos}{text}
+% \draw[line width=0.13mm,color=black,#1]
+  \draw[line width=0.13mm,color=black,#1]
+    #2 -- ($#2!1.1!($#2+#4$)$)
+    #3 -- ($#3!1.1!($#3+#4$)$)
+    [<->] ($#2+#4$) -- ($#3+#4$) node [midway,anchor=base,#5] {$#6$};
+}
+%%==============================================================================
+
+% \title[\rule[1mm]{1cm}{5mm}Statistik\rule[1mm]{1cm}{5mm}] % (optional, use only with long paper titles)
+% \pgfdeclareimage[width=\paperwidth]{mybackground}{alaska.jpg}
+\setbeamertemplate{background}{%
+\put(0,-265.22){%
+\rule[-0.04mm]{\paperwidth}{0.3mm}
+}
+\put(0,-265.22){%
+% {\color{white}\fontsize{0.5mm}{0.4mm}\selectfont\foreach \x in {1,...,31}{\adVers \textcopyright{}ad7\quad} }
+{\color{white}\fontsize{0.5mm}{0.4mm}\selectfont\foreach \x in {1,...,31}{\adVers \copyright{}ad7\quad} }
+}
+\put(0,-39){%
+\rule[-0.04mm]{\paperwidth}{0.1mm}
+}
+\put(0,-39.1){%
+% {\color{white}\fontsize{0.1mm}{0.2mm}\selectfont\adVers \textcopyright{}ad7}
+{\color{white}\fontsize{0.1mm}{0.2mm}\selectfont\adVers \copyright{}ad7}
+}
+}
+
+%%==============================================================================
+% \setbeamertemplate{navigation symbols}{vertical}
+\mode<beamer | trans>{
+\ifteacher
+  \tikzexternalize[prefix=fig/teacher/]
+\else
+  \tikzexternalize[prefix=fig/student/]
+\fi
+% \tikzexternaldisable
+\tikzexternalenable
+\tikzsetfigurename{hydrostatic.pneumatic.main}
+}
+\mode<handout>{
+% \tikzexternalize[prefix=fig/handout/]
+\tikzexternaldisable
+% \tikzexternalenable
+}
+
+% % https://tex.stackexchange.com/questions/252624/using-symbols-from-the-arevmath-package-without-changing-the-entire-mathematics#252625
+% \documentclass{article}
+% \DeclareSymbolFont{extraitalic}      {U}{zavm}{m}{it}
+% \DeclareMathSymbol{\Qoppa}{\mathord}{extraitalic}{161}
+% \DeclareMathSymbol{\qoppa}{\mathord}{extraitalic}{162}
+% \DeclareMathSymbol{\Stigma}{\mathord}{extraitalic}{167}
+% \DeclareMathSymbol{\Sampi}{\mathord}{extraitalic}{165}
+% \DeclareMathSymbol{\sampi}{\mathord}{extraitalic}{166}
+% \DeclareMathSymbol{\stigma}{\mathord}{extraitalic}{168}
+%
+% \begin{document}
+% The important symbols: $\Sampi, \Qoppa$ and $\stigma$. No problem: $30+40+\phi=0$.
+% \end{document}
+
+% Use Fourier for blackboard bold since it's sans serif.
+% fourier-bb doesn't have a .fd font definition file in the fourier package.
+\DeclareFontFamily{U}{futm}{}
+\DeclareFontShape{U}{futm}{m}{n}{
+  <-> s * [1.04] fourier-bb
+  }{}
+% % \DeclareMathAlphabet{\mathbb}        {U}  {futm}{m}{n} % Fourier-GUTenberg blackboard bold
+\DeclareMathAlphabet{\mathbbb}        {U}  {futm}{m}{n} % Fourier-GUTenberg blackboard bold
+% \fontencoding{T1}\renewcommand{\encodingdefault}{OML}\selectfont
+%     \fontfamily{fav}\fontseries{m}\selectfont hi $\mathbbb{L1}$
+
+\begin{document}
+\setbeamersize{description width=0.8cm}
+
+\setbeamertemplate{grid}
+% \fontfamily{ptm}
+% \begin{frame}
+%   \titlepage
+% \end{frame}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+
+% Structuring a talk is a difficult task and the following structure
+% may not be suitable. Here are some rules that apply for this
+% solution:
+
+% - Exactly two or three sections (other than the summary).
+% - At *most* three subsections per section.
+% - Talk about 30s to 2min per frame. So there should be between about
+%   15 and 30 frames, all told.
+
+% - A conference audience is likely to know very little of what you
+%   are going to talk about. So *simplify*!
+% - In a 20min talk, getting the main ideas across is hard
+%   enough. Leave out details, even if it means being less precise than
+%   you think necessary.
+% - If you omit details that are vital to the proof/implementation,
+%   just say so once. Everybody will be happy with that.
+
+% \include{}
+\include{ch01.basics/ch01.basics.tex}
+% \include{chapter/statistics.intro}
+% \include{chapter/ch01/stat.ch01.01.basics}
+% \include{chapter/ch01/stat.ch01.02.parameter.tex}
+% \include{chapter/ch02/stat.ch02.01.stat.inference.intro}
+% \include{ch04.matrices/matrices.main.tex}
+% \include{chapter/ch01/prob.ch01.permutations.II}
+% \include{chapter/ch01/prob.ch01.combinations}
+% \include{chapter/ch01/prob.ch01.conclusion}
+%
+\end{document}
+
+
