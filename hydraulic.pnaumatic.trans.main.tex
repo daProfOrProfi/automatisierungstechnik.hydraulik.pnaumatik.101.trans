@@ -11,7 +11,7 @@
 % \documentclass[fleqn,11pt,trans,aspectratio=43,hyperref={colorlinks = true,linkcolor = blue,urlcolor=red!30!black}}]{beamer}
 \documentclass[fleqn,11pt,beamer,aspectratio=43,hyperref={colorlinks = true,linkcolor = blue,urlcolor=red!30!black}]{beamer}
 % \documentclass[fleqn,11pt,handout,hyperref={colorlinks = true,linkcolor = blue,urlcolor=red!30!black}]{beamer}
-\def\adVers{20222310.v.0.1.s}
+\def\adVers{20220320.v.0.2.s}
 
 \newif\ifteacher
 % \teachertrue
@@ -533,9 +533,10 @@
 %%==============================================================================
 \newcommand{\adSTFieldm}[2][1.0]{%%[scale] value
 \ifteacher
-  {#2}
+  {\ensuremath{#2}}
 \else
-  {\fbox{\phantom{{$#2$}}}}
+  {\fbox{\phantom{{\ensuremath{#2}}}}}
+  % {\fbox{\phantom{{$#2$}}}}
 \fi
 }
 %%==============================================================================

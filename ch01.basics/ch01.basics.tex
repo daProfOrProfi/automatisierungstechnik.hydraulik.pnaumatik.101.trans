@@ -217,22 +217,38 @@
   \frametitle{Eigenschaften der Fluide: Dichte $\rho$}
 %  \framesubtitle{H\"oren}
   %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  \vspace{-2\baselineskip}
   \[
     \rho = \frac{m}{V}\quad \left[\unit{\frac{kg}{m^3}}\right]
   \]  
-  Im technischen Gebrauch liegt die Dichte $\rho$ der verwendeten Fluiden bei 
+  Im technischen Gebrauch liegt die Dichte $\rho$ der verwendeten Fluiden 
+  (Hydraulik\"ol oder Druckfl\"ussigkeit) bei 
+  % \teacherfalse
   \adSTFieldm{\unitfrac[900]{kg}{m^3}}.
 
   Bei steigender Temperatur wird das Volumen bei gleichbleibender Masse 
-  gr\"o\ss{}er, die Dichte verringert sich daher:
-  \[-\frac{\Delta\rho}{\rho}\approx\frac{\Delta V}{V}=\alpha \cdot \Delta \theta\]
+  gr\"o\ss{}er, die Dichte verringert sich daher mit dem Volums\"anderungskoeffizient
+  $\alpha$:
+  \[-\frac{\Delta\rho}{\rho}\approx\frac{\Delta V}{V}=\alpha \cdot \Delta \theta;
+  \quad \begin{array}[c]{@{}l@{}}
+        \rho_\theta =\rho_{15^\circ{}\mathrm{C}}+\adSTFieldm{\Delta \rho} \approx 
+        \rho_{15^\circ{}\mathrm{C}} \cdot (1-\adSTFieldm{\alpha\cdot\Delta \theta}) \\
+        V_\theta =V_{15^\circ{}\mathrm{C}}+\adSTFieldm{\Delta V} = 
+        V_{15^\circ{}\mathrm{C}} \cdot (1+\adSTFieldm{\alpha\cdot\Delta \theta}) \\
+        \end{array}\]
 
+  % \adRule{6}{9}      
+  \parbox[t]{0.45\linewidth}{%
   \begin{tabular}[t]{@{}rl@{}}
-    $V$ & Volumen\\
-    $\Delta V$ & Volums\"anderung\\
-    $\rho_{15^\circ}$ & Dichte bei $\unit[15]{^\circ{}C}$\\
-    $\rho_T$ & Dichte bei Temperatur $T$
-  \end{array}
+    $V$ & \adSTField{Volumen}\\
+    $\Delta V$ & Volums\adSTField{\"anderung}\\
+    $\rho_{15^\circ{}\mathrm{C}}$ & \adSTField{Dichte} bei $\unit[15]{^\circ{}C}$\\
+    $\rho_\theta$ & Dichte bei \adSTField{Temperatur} $\theta$
+  \end{tabular}
+  }\hspace{\stretch{1}}\parbox[t]{0.53\linewidth}{%
+  F\"ur die meisten Hydraulik\"ole ist der Volumenkorrekturfaktor 
+  $\alpha \approx \unitfrac[0.70\cdot10^{-3}]{1}{K}$
+  }
 
    \ifteacher%%
    \else%%
@@ -241,7 +257,8 @@
      \resizebox{0.9\linewidth}{!}{\parbox[t]{3.95\linewidth}{%%
     %  \tiny
    %   \vspace*{-0.7\baselineskip}\hspace*{0.95\linewidth-1cm}\makebox[0pt][l]{\rotatebox[origin=c]{180}{\resizebox{1cm}{!}{%
-     $\unitfrac[900]{kg}{m^3}$
+     $\Delta \rho$, $\alpha\cdot\Delta \theta$, $\Delta V$, $\alpha\cdot\Delta \theta$
+     $\unitfrac[900]{kg}{m^3}$, Volumen, \"anderung, Dichte, Temperatur, 
      }}}
    \fi%%
   
@@ -249,6 +266,324 @@
 
 \end{frame}
 %= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+% \part{Kombi}
+% \section{Hydraulische und Pneumatische Bauteile}
+% \subsection{Grundlagen}
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+% \iffalse
+\begin{frame}
+  \frametitle{Eigenschaften der Fluide: Dichte $\rho$}
+%  \framesubtitle{H\"oren}
+  %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  \begin{block}{Beispiel: Dichte\"anderung bei Temperaturerh\"ohung}
+    Bsp.: $\unit[2.5]{kg}$ eines Hydraulik\"oles mit einer Dichte von 
+    $\unitfrac[900]{kg}{m^3}$ bei $\unit[15]{^\circ\,C}$ wird auf 
+    $\unit[95]{^\circ\,C}$ erwärmt.
+  Bestimmen Sie das Volumen.
+
+  \end{block}
+
+
+   \ifteacher%%
+   \else%%
+    %  \vspace*{-0.7\baselineskip}\hspace{\stretch{1}}\rotatebox[origin=lB]{180}{%%
+     \vspace*{-1.0\baselineskip}\hspace{\stretch{1}}\rotatebox[origin=lB]{180}{%%
+     \resizebox{0.9\linewidth}{!}{\parbox[t]{3.95\linewidth}{%%
+    %  \tiny
+   %   \vspace*{-0.7\baselineskip}\hspace*{0.95\linewidth-1cm}\makebox[0pt][l]{\rotatebox[origin=c]{180}{\resizebox{1cm}{!}{%
+     \ %%
+     }}}
+   \fi%%
+  
+  %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+\end{frame}
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+% \part{Kombi}
+% \section{Hydraulische und Pneumatische Bauteile}
+% \subsection{Grundlagen}
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+% \iffalse
+\begin{frame}
+  \frametitle{Eigenschaften der Fluide: Kompressibilit\"at}
+%  \framesubtitle{H\"oren}
+  %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  Bei zunehmendem Druck komprimiert sich das \"Ol, der Zusammenhang 
+  f\"ur das Dichte-Druck-Verhalten ist im linearisiertem Modell:
+
+  \[
+    \frac{\Delta\rho}{\rho}\approx-\frac{\Delta V}{V}=\beta \cdot \Delta p;
+    \quad \begin{array}[c]{@{}l@{}}
+      \rho_p =\rho_{p_0}+\adSTFieldm{\Delta \rho} \approx 
+      \rho_{p_0} \cdot (1+\adSTFieldm{\beta\cdot\Delta p})     \\
+      V_p =V_{p_0}+\adSTFieldm{\Delta V} = 
+      V_{p_0} \cdot (1-\adSTFieldm{\beta\cdot\Delta p}) \\
+      \end{array}
+  \]
+
+
+  \begin{tabular}[t]{@{}rl@{}}
+    $V$ & \adSTField{Volumen}\\
+    $\Delta V$ & Volums\adSTField{\"anderung}\\
+    $\rho_{p_0}$ & \adSTField{Dichte} bei Normaldruck $p_0$\\
+    $\rho_p$ & Dichte bei veränderten \adSTField{Druck} $p$\\
+    $\beta$ &  \adSTField{Kompressibilit\"at}/Pressziffer in $\left[\unitfrac[]{1}{bar}\right]$\\
+    $K=\nicefrac[]{1}{\beta}$ & Kompressionsmodul/\adSTField{Elastizit\"atsmodul} in $\left[\unit[]{bar}\right]$ 
+  \end{tabular}
+
+   \ifteacher%%
+   \else%%
+    %  \vspace*{-0.7\baselineskip}\hspace{\stretch{1}}\rotatebox[origin=lB]{180}{%%
+     \vspace*{-1.0\baselineskip}\hspace{\stretch{1}}\rotatebox[origin=lB]{180}{%%
+     \resizebox{0.9\linewidth}{!}{\parbox[t]{3.95\linewidth}{%%
+    %  \tiny
+   %   \vspace*{-0.7\baselineskip}\hspace*{0.95\linewidth-1cm}\makebox[0pt][l]{\rotatebox[origin=c]{180}{\resizebox{1cm}{!}{%
+     $\Delta \rho$, $\beta\cdot\Delta p$, $\Delta V$, $\beta\cdot\Delta p$,\\
+     Volumen, \"anderung, Dichte, Druck, Kompressibilit\"at, Elastizit\"atsmodul
+     }}}
+   \fi%%
+  
+  %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+\end{frame}
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+% \part{Kombi}
+% \section{Hydraulische und Pneumatische Bauteile}
+% \subsection{Grundlagen}
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+% \iffalse
+\begin{frame}
+  \frametitle{Eigenschaften der Fluide: Kompressibilit\"at}
+%  \framesubtitle{H\"oren}
+  %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+  \begin{block}{Beispiel: Dichte\"anderung unter Druck}
+    Bsp.: $\unit[2.5]{kg}$ eines Hydraulik\"oles mit einer Dichte von 
+    $\unitfrac[900]{kg}{m^3}$ bei einem Druck von $p_0=\unit[1]{bar}$ 
+    wird unter einen Druck von $p=\unit[150]{bar}$ komprimiert.
+  Bestimmen Sie das Volumen.
+
+  \begin{tabular}[]{@{}rll}
+    \toprule
+    & Kompressionsmodul $K$ & Kompressibilität $\beta$\\
+    \"Olsorte & in $10^4$ bar & in $10^{-4}$ \unitfrac[]{1}{bar} \\
+    \midrule
+    Mineral\"ol &1.4 & 0.7\\
+    HFC, HFD-Hydraulik\"ol & 3 & \nicefrac{1}{3} $\approx$ 0.33\\
+    \bottomrule
+  \end{tabular}
+
+  Aus \emph{Hydraulik und Pneumatik, 2017}
+  \end{block}
+
+
+   \ifteacher%%
+   \else%%
+    %  \vspace*{-0.7\baselineskip}\hspace{\stretch{1}}\rotatebox[origin=lB]{180}{%%
+     \vspace*{-1.0\baselineskip}\hspace{\stretch{1}}\rotatebox[origin=lB]{180}{%%
+     \resizebox{0.9\linewidth}{!}{\parbox[t]{3.95\linewidth}{%%
+    %  \tiny
+   %   \vspace*{-0.7\baselineskip}\hspace*{0.95\linewidth-1cm}\makebox[0pt][l]{\rotatebox[origin=c]{180}{\resizebox{1cm}{!}{%
+     Volumen, \"anderung, Dichte, Temperatur, $\unitfrac[900]{kg}{m^3}$
+     }}}
+   \fi%%
+  
+  %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+\end{frame}
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+% \part{Kombi}
+% \section{Hydraulische und Pneumatische Bauteile}
+% \subsection{Grundlagen}
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+% \iffalse
+\begin{frame}
+  \frametitle{Eigenschaften der Fluide: Viskosit\"at, \emph{Rheologie}}
+%  \framesubtitle{H\"oren}
+  %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  
+  Die Viskosit\"at ist ein Ma\ss{} f\"ur den \adSTField{Flie\ss{}widerstand}, die Z\"ahigkeit
+  auf Grund der inneren \adSTField{Reibung} (dick- und d\"unnfl\"ussg).
+
+  \parbox[c]{0.49\linewidth}{
+    In einem linearem \adSTField{Modell} (nach \textsc{Isaac NEWTON} werden zwei parallele 
+    Platten mit einer \adSTField{Fl\"ache} $A$,
+    die sich mit einer \adSTField{Relativgeschwindigkeit} $v$ zueinander bewegen und 
+    in einem \adSTField{Abstand} $d=\Delta y$ sind, betrachtet.
+  }\hspace{\stretch{1}}\parbox[c]{0.49\linewidth}{
+      \includegraphics[width=\linewidth]{./ch01.basics/pics/Definition_Viskositaet}
+  } 
+
+  \ifteacher%%
+  \else%%
+   %  \vspace*{-0.7\baselineskip}\hspace{\stretch{1}}\rotatebox[origin=lB]{180}{%%
+    \vspace*{-0.0\baselineskip}\hspace{\stretch{1}}\rotatebox[origin=lB]{180}{%%
+    \resizebox{0.9\linewidth}{!}{\parbox[t]{3.95\linewidth}{%%
+   %  \tiny
+  %   \vspace*{-0.7\baselineskip}\hspace*{0.95\linewidth-1cm}\makebox[0pt][l]{\rotatebox[origin=c]{180}{\resizebox{1cm}{!}{%
+  Flie\ss{}widerstand, Reibung, Modell, Fl\"ache, Relativgeschwindigkeit, Abstand
+    }}}
+  \fi%%
+  
+  %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+\end{frame}
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+% \part{Kombi}
+% \section{Hydraulische und Pneumatische Bauteile}
+% \subsection{Grundlagen}
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+% \iffalse
+\begin{frame}
+  \frametitle{Eigenschaften der Fluide: Viskosit\"at, \emph{Rheologie}}
+%  \framesubtitle{H\"oren}
+  %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  
+  \begin{tabular}[t]{@{}lll@{}}
+    je gr\"o\ss{}er die Fl\"ache & desto \adSTField{gr\"o\ss{}er} die Kraft & $F\sim A$\\
+    je gr\"o\ss{}er die Geschwindigkeit & desto \adSTField{gr\"o\ss{}er} die Kraft & $F\sim \Delta v\ (\diff{v})$\\
+    je gr\"o\ss{}er der Abstand der Platten & desto \adSTField{kleiner} die Kraft & $F \sim \nicefrac[]{1}{\Delta y}\ (\nicefrac[]{1}{\diff{y}})$
+  \end{tabular}
+  
+
+  Mit dem materialabh\"angigen Proportionalit\"atfaktor $\eta$ 
+  (absolute oder dynamische Viskosit\"at) erh\"alt man (im einfachen linearen Modell):
+  \parbox[c]{0.49\linewidth}{
+    \[
+      F = \eta \cdot A \cdot \frac{\Delta v}{\Delta y}= \eta \cdot A \cdot \frac{\diff{v}}{\diff{y}}
+    \] 
+  }\hspace{\stretch{1}}\parbox[c]{0.49\linewidth}{
+    \includegraphics[width=\linewidth]{./ch01.basics/pics/Definition_Viskositaet}
+  }
+
+  \ifteacher%%
+  \else%%
+   %  \vspace*{-0.7\baselineskip}\hspace{\stretch{1}}\rotatebox[origin=lB]{180}{%%
+    \vspace*{-1.0\baselineskip}\hspace{\stretch{1}}\rotatebox[origin=lB]{180}{%%
+    \resizebox{0.9\linewidth}{!}{\parbox[t]{3.95\linewidth}{%%
+   %  \tiny
+  %   \vspace*{-0.7\baselineskip}\hspace*{0.95\linewidth-1cm}\makebox[0pt][l]{\rotatebox[origin=c]{180}{\resizebox{1cm}{!}{%
+  gr\"o\ss{}er, gr\"o\ss{}er, kleiner
+    }}}
+  \fi%%
+
+  % \begin{block}{Beispiel: Dichte\"anderung unter Druck}
+  %   Bsp.: $\unit[2.5]{kg}$ eines Hydraulik\"oles mit einer Dichte von 
+  %   $\unitfrac[900]{kg}{m^3}$ bei einem Druck von $p_0=\unit[1]{bar}$ 
+  %   wird unter einen Druck von $p=\unit[150]{bar}$ komprimiert.
+  % Bestimmen Sie das Volumen.
+
+  %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+\end{frame}
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+% \part{Kombi}
+% \section{Hydraulische und Pneumatische Bauteile}
+% \subsection{Grundlagen}
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+% \iffalse
+\begin{frame}
+  \frametitle{Eigenschaften der Fluide: Viskosit\"at, \emph{Rheologie}}
+%  \framesubtitle{H\"oren}
+  %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  Die Viskosit\"at \"andert sich mit:
+  \begin{itemize}
+    \item \adSTField{Temperatur}
+    \item \adSTField{Druck}
+    \item \adSTField{Geschwindigkeit}
+    \item Alterung
+  \end{itemize}
+  
+  Durch Zugabe von Additiven wird versucht, die Eigenschaften des Hydraulik\"oles
+  f\"ur den Betrieb zu verbessern, und Alterungsvorg\"ange zu verlangsamen.
+
+  \ifteacher%%
+  \else%%
+   %  \vspace*{-0.7\baselineskip}\hspace{\stretch{1}}\rotatebox[origin=lB]{180}{%%
+    \vspace*{-1.0\baselineskip}\hspace{\stretch{1}}\rotatebox[origin=lB]{180}{%%
+    \resizebox{0.9\linewidth}{!}{\parbox[t]{3.95\linewidth}{%%
+   %  \tiny
+  %   \vspace*{-0.7\baselineskip}\hspace*{0.95\linewidth-1cm}\makebox[0pt][l]{\rotatebox[origin=c]{180}{\resizebox{1cm}{!}{%
+  Temperatur, Druck, Geschwindigkeit
+    }}}
+  \fi%%
+
+  % \begin{block}{Beispiel: Dichte\"anderung unter Druck}
+  %   Bsp.: $\unit[2.5]{kg}$ eines Hydraulik\"oles mit einer Dichte von 
+  %   $\unitfrac[900]{kg}{m^3}$ bei einem Druck von $p_0=\unit[1]{bar}$ 
+  %   wird unter einen Druck von $p=\unit[150]{bar}$ komprimiert.
+  % Bestimmen Sie das Volumen.
+
+  %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+\end{frame}
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+
+
+% \part{Kombi}
+% \section{Hydraulische und Pneumatische Bauteile}
+% \subsection{Grundlagen}
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+% \iffalse
+\begin{frame}
+  \frametitle{Kennbuchstaben }
+%  \framesubtitle{H\"oren}
+  %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  \begin{tabular}[t]{@{}ll@{\quad}ll@{}}
+    \toprule
+    AN  & Normalschmieröle,                    & Jx  & elektrische Isolieröle,             \\
+    Bx  & Schmieröl BA, BB oder                &     & JA oder JB,                         \\
+        & BC (z. B.: bitumenhaltig),           & Kx  & Kältemaschinenöle,                  \\
+    C   & Umlaufschmieröle,                    & L   & Härte- und Vergüteöle,              \\
+    CG  & Gleitbahnöle,                        & Q   & Wärmeträgeröle,                     \\
+    D   & Druckluftöle,                        & R   & Korrosionsschutzöle,                \\
+    F   & Luftfilteröle,                       & S   & Kühlschmierstoffe,                  \\
+    FS  & Formen-Trennöle,                     & TD  & Schmier- und Regleröle,             \\
+    H   & Hydrauliköle,                        & V   & Luftverdichteröle,                  \\
+    HF  & schwer entflammbare Hydraulik\"ole,  & W   & Walzöle,                            \\
+    HE  & biologisch abbaubare Hydraulik\"ole, & Zx  & Dampfzylinderöle.                   \\ 
+    HV  & Hydrauliköle mit verbessertem        &     & ZS, ZA, ZB oder ZD.\\
+        & Viskositäts-Temperatur-Verhalten, \\
+    \bottomrule
+  \end{tabular}
+
+  \ifteacher%%
+  \else%%
+   %  \vspace*{-0.7\baselineskip}\hspace{\stretch{1}}\rotatebox[origin=lB]{180}{%%
+    \vspace*{-1.0\baselineskip}\hspace{\stretch{1}}\rotatebox[origin=lB]{180}{%%
+    \resizebox{0.9\linewidth}{!}{\parbox[t]{3.95\linewidth}{%%
+   %  \tiny
+  %   \vspace*{-0.7\baselineskip}\hspace*{0.95\linewidth-1cm}\makebox[0pt][l]{\rotatebox[origin=c]{180}{\resizebox{1cm}{!}{%
+  Temperatur, Druck, Geschwindigkeit
+    }}}
+  \fi%%
+
+  % \begin{block}{Beispiel: Dichte\"anderung unter Druck}
+  %   Bsp.: $\unit[2.5]{kg}$ eines Hydraulik\"oles mit einer Dichte von 
+  %   $\unitfrac[900]{kg}{m^3}$ bei einem Druck von $p_0=\unit[1]{bar}$ 
+  %   wird unter einen Druck von $p=\unit[150]{bar}$ komprimiert.
+  % Bestimmen Sie das Volumen.
+
+  %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+\end{frame}
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+
 
 % \part{Kombi}
 % \section{Intro}
